@@ -442,7 +442,7 @@ a {
 /* ---HOME--- */
 /*  background setting */
 .home {
-    background: url(./img/bg/bg-main-4k.jpg) no-repeat center/cover fixed;
+    background: url(./img/bg/bg-main-phone.jpg) no-repeat center/cover fixed;
     position: relative;
     z-index: 1;
 }
@@ -1104,6 +1104,9 @@ with a delay created based on the "--i" that was
     }
 
     /* ---HOME--- */
+    .home {
+        background: url(/img/bg/bg-main-4k.jpg) no-repeat right/cover fixed;
+    }
 
     /* ---ABOUT--- */
     .about_wrapper {
