@@ -76,45 +76,48 @@ valueDisplays.forEach((valueDisplay) => {
         }
     }, duration);
 });
-
 //-----------CAROUSEL SCRIPT USED IN TESTIMONIAL SECTION-----------
-const container = document.querySelector(".testimonial_box");
-const cards = document.querySelector(".testimonial_wrapper");
+let autoSlideIndex = 0;
+automaticSlideShow();
 
-/* keep track of user's mouse down and up */
-let isPressedDown = false;
-/* x horizontal space of cursor from inner container */
-let cursorXSpace;
-
-container.addEventListener("mousedown", (e) => {
-    isPressedDown = true;
-    cursorXSpace = e.offsetX - cards.offsetLeft;
-    container.style.cursor = "grabbing";
-});
-
-container.addEventListener("mouseup", () => {
-    container.style.cursor = "grab";
-});
-
-window.addEventListener("mouseup", () => {
-    isPressedDown = false;
-});
-
-container.addEventListener("mousemove", (e) => {
-    if (!isPressedDown) return;
-    e.preventDefault();
-    cards.style.left = `${e.offsetX - cursorXSpace}px`;
-    boundCards();
-});
-
-function boundCards() {
-    const container_rect = container.getBoundingClientRect();
-    const cards_rect = cards.getBoundingClientRect();
-
-    if (parseInt(cards.style.left) > 0) {
-        cards.style.left = 0;
-    } else if (cards_rect.right < container_rect.right) {
-        cards.style.left = `-${cards_rect.width - container_rect.width}px`;
+function automaticSlideShow() {
+    let i;
+    let autoSlides = document.getElementsByClassName("testimonial_content");
+    for (i = 0; i < autoSlides.length; i++) {
+        autoSlides[i].style.display = "none";
     }
+    autoSlideIndex++;
+    if (autoSlideIndex > autoSlides.length) { autoSlideIndex = 1 }
+    autoSlides[autoSlideIndex - 1].style.display = "block";
+    setTimeout(automaticSlideShow, 6000); // Change image every 2 seconds
+}
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n){
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("testimonial_content");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
 }
 //--- CAROUSEL SCRIPT USED IN TESTIMONIAL SECTION---

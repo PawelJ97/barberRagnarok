@@ -46,28 +46,12 @@ body {
 html {
     scroll-behavior: smooth;
 }
-
-
-/* col- class for mobile */
-/* [class*="col-"] {
-    text-align: center;   
-} */
-
-/* .flex-setup {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-} */
-
 /* ---END GENERAL OPTIONS--- */
 
 /* ---STYLE TEMPLATES--- */
-
 .container {
     min-height: 100vh;
-    padding: 8rem 1rem;
+    padding: 2rem 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -253,7 +237,7 @@ a {
 }
 
 .section-intro {
-    margin: 1rem 0
+    margin: 2rem 0 4rem 0;
 }
 
 /* circle background effect*/
@@ -271,7 +255,7 @@ a {
     background: linear-gradient(-45deg,
             #00000099,
             #cfb43b80);
-    clip-path: circle(15% at right 80%);
+    clip-path: circle(17% at right 83%);
     animation: circle-moveup 8s ease-in-out infinite;
 }
 
@@ -285,7 +269,7 @@ a {
     background: linear-gradient(45deg,
             rgba(0, 0, 0, 0.6),
             #cfb43b80);
-    clip-path: circle(15% at left 50%);
+    clip-path: circle(17% at left 53%);
     z-index: -1;
     animation: circle-moveup 8s ease-in-out infinite;
 }
@@ -296,8 +280,8 @@ a {
     width: 100%;
     background: rgba(255, 255, 255, 0.06);
     border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 35px rgba(21, 21, 21, 0.6);
     backdrop-filter: blur(0.6rem) saturate(180%);
+    border-radius: .6rem;
     z-index: 1;
 }
 
@@ -498,12 +482,12 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     border-radius: 2.5rem;
     letter-spacing: 0.2rem;
     overflow: hidden;
+    text-transform: uppercase;
     opacity: 1;
 }
 
 .home_btn {
-    font-size: var(--span-normal-fsize);
-    text-transform: uppercase;
+    font-size: var(--span-normal-fsize);    
 }
 
 .home_action span {
@@ -520,32 +504,30 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
 /* ---ABOUT US---> Used Glass card<--- */
 
 .about_wrapper {
-    width: 100%;
+    width: 95%;
     gap: 1.7rem;
     display: grid;
     justify-items: center;
-    margin-bottom: 5rem;
-    border-radius: 1rem;
-    padding: 1.7rem 1rem;
+    padding: 3rem 1rem;
+    max-width: 25rem;
 }
 
 .about_counter {
     position: relative;
     display: grid;
-    width: 75%;
-    max-width: 15rem;
+    width: 85%;
     filter: drop-shadow(0 .3rem 0.2rem rgb(0, 0, 0));
-    padding: 1rem 1rem;
+    padding: 1rem;
     transition: 1s;
     border-radius: 50%;
     border: 2px solid var(--mainColor);
     border-bottom: 12px solid var(--mainColor);
     z-index: 1;
+    max-width: 15rem;
 }
 
 .about_counter:hover {
     transform: rotateX(35deg);
-    /* transform: skew(15deg, -5deg); hymm*/
     filter: drop-shadow(0 1.4rem 0.6rem rgb(0, 0, 0));
 }
 
@@ -563,26 +545,24 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     padding-bottom: .5rem;
     font-size: var(--basic-fsize);
 }
-
 /* ---END ABOUT US--- */
 
 /* ---SERVICES--- */
-
 .services_wrapper {
     position: relative;
     display: grid;
     justify-items: center;
     justify-content: center;
-    width: 100%;
-    gap: 2rem;
+    width: 95%;
+    max-width: 20rem;
+    gap: 2.7rem;
 }
 
 .services_content {
-    position: relative;
-    max-width: 350px;
-    padding: 1rem;
+    position: relative;  
+    padding: 1rem 1.5rem;
     border: 2px solid var(--mainColor);
-    box-shadow: 0px 0px 12px 0px var(--mainColor);
+    box-shadow: 0px 0px 10px 0px var(--mainColor);
     border-radius: 1rem;
     overflow: hidden;
     display: flex;
@@ -633,7 +613,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
 }
 
 .services_content:hover {
-    transform: translateY(-1.3rem);
+    transform: translateY(-1.2rem);
     box-shadow: 0px 6px 12px 0px var(--mainColor);
     color: var(--white);   
 }
@@ -654,9 +634,9 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
 
 .team_content {
     position: relative;
-    width: 90%;
-    max-width: 300px;
-    height: 400px;
+    width: 95%;
+    max-width: 15rem;
+    height: 25rem;
     margin: 3.5rem 1.25rem 5.5rem;
 }
 
@@ -762,32 +742,16 @@ with a delay created based on the "--i" that was
 
 /*--- END TEAM <---*/
 
-.testimonial_box {
-    position: relative;
-    width: 100%;
-    cursor: grab;
-    display: grid;
-    overflow: hidden;
-}
-
 .testimonial_wrapper {
     position: relative;
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns: repeat(6, 300px);
-    grid-gap: 60px;
-    pointer-events: none;
+    width: 100%;
+    margin: auto;
 }
 
 .testimonial_content {
-    overflow: hidden;
-    display: grid;
-    justify-items: center;
-    align-content: space-around;
-    width: 90%;
-    background: rgba(255, 255, 255, 0.06);
-    padding: .5rem .4rem;
+    width: 100%;
+    position: relative;
+    padding: 0 1.4rem;
 }
 
 .stars {
@@ -796,30 +760,190 @@ with a delay created based on the "--i" that was
     font-size: 1.5rem;
     color: var(--mainColor);
     margin: .5rem auto;
-    filter: drop-shadow(0 0 0.3rem var(--mainColor));
 }
 
 .quote {
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     color: var(--mainColor);
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 .testimonial_user {
-    margin: auto;
+    margin-top: auto;
 }
 
 .testimonial_content img {
-    width: 150px;
-    height: 150px;
+    width: 70%;
+    max-width: 15rem;
     border-radius: 50%;
     border: 2px solid var(--mainColor);
     object-fit: cover;
-    margin-top: .5rem;
+    margin: 1rem auto;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;  
+    top: 50%;
+    margin-top: auto;
+    font-weight: bold;
+    font-size: var(--h3-fsize);
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    color: var(--silver);
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev{
+    left: 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    color: var(--mainColor);
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 /*---END TESTIMONIALS---*/
+
+/*---CONTACT---*/
+.contact_wrapper {
+    width: 100%;
+    position: relative;
+    display: grid;
+    justify-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+
+/*---form---*/
+.contact_form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.glass-card-wrapper {
+    position: relative;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.06);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.6rem) saturate(180%);
+    z-index: 1;
+}
+.form_field{
+    display: flex;
+    flex-direction: column;
+    margin:.3rem 0;
+    width: 100%;
+}
+
+.field-name{
+    font-size: var(--span-normal-fsize);
+    margin-top: .6rem;
+    margin-bottom: .3rem;
+    color: var(--mainColor);
+    text-transform: capitalize;
+}
+
+.field_input{
+    padding: .6rem;
+    font-size: var(--span-normal-fsize);
+    color: var(--white);
+    outline: none;
+    border-style: none;
+    border-bottom: 1px solid var(--silver);
+    text-transform: capitalize;
+    background: transparent;
+}
+
+.field_textarea{
+    padding: .6rem;
+    font-size: var(--span-normal-fsize);
+    color: var(--white);
+    background: transparent;
+    outline: none;
+    border-style: none;
+    border: 1px solid var(--silver);
+    border-radius: .6rem;
+    resize: none;
+    min-height: 15rem;
+    margin-bottom: .6rem;
+    
+}
+
+.field_submit{
+    background: transparent;
+    color: var(--mainColor);
+    border: 1px solid var(--silver);
+    padding: .5rem;
+    border-radius: .6rem;
+    font-size: var(--span-normal-fsize);
+    text-transform: uppercase;
+    cursor: pointer;    
+}
+
+.form_box ::placeholder{
+    color: #c0c0c0;
+}
+/*---details---*/
+.contact_details{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    width: 100%;
+}
+
+.contact_info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: .5rem;
+    margin-bottom: 10px;
+}
+
+.contact_info i{
+    color: var(--mainColor);
+    font-size: var(--span-normal-fsize);
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.contact_option {
+    color: var(--silver);
+    font-size: var(--span-normal-fsize);
+    text-decoration: none;
+}
+
+.contact_map {
+    padding: 0;
+}
+
+.contact_map iframe{
+    width: 100%;
+    height: 100%;
+}
+/*---END CONTACT---*/
 
 /*-----FOOTER----- */
 .footer{
@@ -839,15 +963,22 @@ with a delay created based on the "--i" that was
     padding: 1rem .5rem;
 }
 
-.company {
+.footer_company {
     position: relative;
     display: flex;
     align-items: center;
     margin: auto;
 }
 
-.brand{
-    margin: auto 0;
+.footer_brand{
+    margin: auto auto;
+    font-size: var(--basic-fsize);
+}
+
+.footer_logo{
+    width: 40px;
+    height: 40px;
+    margin-left: 1rem;
 }
 
 .footer_social-media{
@@ -858,12 +989,12 @@ with a delay created based on the "--i" that was
     margin-top: .5rem;
 }
 .footer_social-media li{
-    margin: 0.6rem;
+    margin: .8rem;
 }
 
 .footer_social-media a i{
     color: var(--silver);
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     transition: 1.2s;
 }
 
@@ -954,30 +1085,35 @@ with a delay created based on the "--i" that was
     }
 }
 
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
 /* END ANIMATION */
 
 /* ---MEDIA--- */
 
 @media only screen and (min-width: 425px) {
-    .section-intro {
+    /* .section-intro {
         margin: 3rem 1.5rem;
-    }
+    } */
 
-    .about_wrapper {
+    /* .about_wrapper {
         width: 80%;
     }
 
     .about_counter {
         width: 60%;
-    }
+    } */
 
-    .services_content {
+    /* .services_content {
         width: 75%;
-    }
+    } */
 
-    .team_content {
+    /* .team_content {
         width: 60%;
-    }
+    } */
     .testimonial_wrapper{
         grid-template-columns: repeat(6, 420px);
     }   
@@ -993,86 +1129,61 @@ with a delay created based on the "--i" that was
         clip-path: circle(20% at left 58%);
         animation: circle-moveup 8s ease-in-out infinite;
     }
-    
+
+    .section-intro {
+        width: 80%;
+    } 
+    /* ABOUT SECTION */
     .about_wrapper {
+        width:95%;
+        max-width: 40rem;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         align-items: center;
         justify-items: center;
     }
 
+    .about_counter {
+        width: 100%;
+    }
+
+    /* SERVICES SECTION */
     .services_wrapper {
         display: grid;
-        grid-template-columns: repeat(2, auto);
+        grid-template-columns: repeat(2, 1fr);
+        width: 95%;
+        max-width: 40rem;
+        gap: 2.7rem 1.7rem;
     }
 
+    /* TEAM SECTION */
     .team_wrapper {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center
+        max-width: 40rem;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    /* For tablets: */
-    .col-s-1 {
-        width: 8.33%;
-    }
-
-    .col-s-2 {
-        width: 16.66%;
-    }
-
-    .col-s-3 {
-        width: 25%;
-    }
-
-    .col-s-4 {
-        width: 33.33%;
-    }
-
-    .col-s-5 {
-        width: 41.66%;
-    }
-
-    .col-s-6 {
-        width: 50%;
-    }
-
-    .col-s-7 {
-        width: 58.33%;
-    }
-
-    .col-s-8 {
-        width: 66.66%;
-    }
-
-    .col-s-9 {
-        width: 75%;
-    }
-
-    .col-s-10 {
-        width: 83.33%;
-    }
-
-    .col-s-11 {
-        width: 91.66%;
-    }
-
-    .col-s-12 {
-        width: 100%;
+    
+    .team_content {
+        max-width: 20rem;
     }
 }
 
-@media only screen and (min-width: 990px) {
+
+@media only screen and (min-width: 1020px) {
     .circle-bg::before {
-        clip-path: circle(20% at right 60%);
+        clip-path: circle(22% at right 64%);
         animation: circle-moveup 5s ease-in-out infinite;
     }
     
     .circle-bg::after {
-        clip-path: circle(20% at left 40%);
+        clip-path: circle(22% at left 42%);
         animation: circle-moveup 5s ease-in-out infinite;
     }
+
+    .section-intro {
+        width: 50%;
+    } 
+
     /* ---HEADER--- */
     .header .hamburger{
         display: none;
@@ -1111,69 +1222,50 @@ with a delay created based on the "--i" that was
     /* ---ABOUT--- */
     .about_wrapper {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: auto;
-        align-items: center;
-        justify-items: center;
+        max-width: 80rem;
     }
 
     /* ---SERVICES--- */
     .services_wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 80rem;
+    }
+
+    /* ---TEAM--- */
+    .team_wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        max-width: 80rem;
+    }
+
+    /* ---TESTIMONIALS--- */
+    .testimonial_wrapper {
+        max-width: 86rem;
+    }
+    .testimonial_content{
+        padding: 0 3rem;
+    }
+    /* ---CONTACT--- */
+    .contact_wrapper {
+        position: relative;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 5fr 4fr;
+        grid-template-areas:
+        "form details"
+        "form map";
+        gap:20px;
+        margin-top: 20px;
+        width: 100%;
+        padding: 40px;
+        margin: auto;
+    }
+    .row50{
+        display: flex;
+        gap: 20px;
     }
 
-
-    /* For desktop: */
-    .col-1 {
-        width: 8.33%;
-    }
-
-    .col-2 {
-        width: 16.66%;
-    }
-
-    .col-3 {
-        width: 25%;
-    }
-
-    .col-4 {
-        width: 33.33%;
-    }
-
-    .col-5 {
-        width: 41.66%;
-    }
-
-    .col-6 {
+    .input_box{
         width: 50%;
     }
-
-    .col-7 {
-        width: 58.33%;
-    }
-
-    .col-8 {
-        width: 66.66%;
-    }
-
-    .col-9 {
-        width: 75%;
-    }
-
-    .col-10 {
-        width: 83.33%;
-    }
-
-    .col-11 {
-        width: 91.66%;
-    }
-
-    .col-12 {
-        width: 100%;
-    }
 }
-
-
-
-
 /* ---MEDIA--- */
