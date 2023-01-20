@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital@1&display=swap');
 
-/*Creating for mobile first*/
+/*---MOBILE FIRST---*/
 /* ---GENERAL OPTIONS--- */
 :root {
     /*========== Colors ==========*/
@@ -12,11 +12,7 @@
     --bgColor: rgb(13, 13, 13);
     --btn-bgcolor: rgba(255, 255, 255, 0.06);
 
-    /*========== Font and typography ==========*/
-    /*.5rem = 8px | 1rem = 16px ...*/
-    /* --step--2: clamp(1.13rem, calc(0.44rem + 0.97vw), 0.63rem);
-    --step--1: clamp(1.35rem, calc(0.64rem + 1.00vw), 0.84rem);
-    --step-0: clamp(1.13rem, calc(0.93rem + 0.98vw), 1.63rem); */
+    /*========== Font ==========*/
 
     --h4-fsize: clamp(1.375rem, calc(1.25rem + 1vw), 2.125rem);
     --h3-fsize: clamp(1.375rem, calc(1.25rem + 1vw), 2.125rem);
@@ -25,10 +21,9 @@
 
     --span-large-fsize: clamp(1.225rem, calc(1rem + 1vw), 1.875rem);
     --span-normal-fsize: clamp(1rem, calc(-1.25rem + 4vw), 1.5rem);
-    --basic-fsize: 1.25rem;
+    --basic-fsize: 1.1rem;
 
     --fstyle-play: 'Playfair Display', serif;
-
 }
 
 * {
@@ -46,6 +41,7 @@ body {
 html {
     scroll-behavior: smooth;
 }
+
 /* ---END GENERAL OPTIONS--- */
 
 /* ---STYLE TEMPLATES--- */
@@ -93,6 +89,15 @@ p {
     margin: .8rem 0;
 }
 
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+.text--golden {
+    color: var(--mainColor);
+}
+
 .text--golden-glow {
     color: var(--mainColor);
     filter: drop-shadow(0 0 0.3rem var(--mainColor));
@@ -119,7 +124,7 @@ ul li {
     width: 60px;
 }
 
-.logo{
+.logo {
     height: 50px;
     width: 50px;
 }
@@ -129,14 +134,13 @@ a {
     color: var(--silver);
 }
 
-/* ---STYLE TEMPLATES-------------------------------- */
-/* ---Background animation -> Team section----------- */
+/* ---END STYLE TEMPLATES--- */
+/* ---Background animation -> Team section ----------- */
 .bg_animation--crosses {
     position: absolute;
     width: 100%;
     height: 100%;
     overflow: hidden;
-
 }
 
 .bg_animation--crosses .bg-animation_item {
@@ -148,20 +152,20 @@ a {
 }
 
 .bg-animation_item:nth-child(1) {
-    top: 12%;
-    left: 43%;
+    top: 28%;
+    left: 13%;
     animation: bg_animation--crosses 6s linear infinite;
 }
 
 .bg-animation_item:nth-child(2) {
     top: 66%;
     left: 8%;
-    animation: bg_animation--crosses 7s linear infinite;
+    animation: bg_animation--crosses 8s linear infinite;
 }
 
 .bg-animation_item:nth-child(3) {
-    top: 17%;
-    left: 5%;
+    top: 87%;
+    left: 50%;
     animation: bg_animation--crosses 8s linear infinite;
 }
 
@@ -184,8 +188,8 @@ a {
 }
 
 .bg-animation_item:nth-child(7) {
-    top: 55%;
-    left: 84%;
+    top: 45%;
+    left: 83%;
     animation: bg_animation--crosses 7s linear infinite;
 }
 
@@ -196,25 +200,25 @@ a {
 }
 
 .bg-animation_item:nth-child(9) {
-    top: 92%;
+    top: 87%;
     left: 15%;
     animation: bg_animation--crosses 10s linear infinite;
 }
 
 .bg-animation_item:nth-child(10) {
-    top: 21%;
-    left: 78%;
+    top: 22%;
+    left: 72%;
     animation: bg_animation--crosses 6s linear infinite;
 }
 
 .bg-animation_item:nth-child(11) {
-    top: 16%;
-    left: 90%;
-    animation: bg_animation--crosses 5s linear infinite;
+    top: 93%;
+    left: 81%;
+    animation: bg_animation--crosses 8s linear infinite;
 }
 
 .bg-animation_item:nth-child(12) {
-    top: 80%;
+    top: 89%;
     left: 35%;
     animation: bg_animation--crosses 5s linear infinite;
 }
@@ -231,14 +235,8 @@ a {
     animation: bg_animation--crosses 10s linear infinite;
 }
 
-.bg-animation_item:nth-child(15) {
-    top: 90%;
-    left: 85%;
-    animation: bg_animation--crosses 8s linear infinite;
-}
-
 .section-intro {
-    margin: 2rem 0 4rem 0;
+    margin: 1.5rem 0;
 }
 
 /* circle background effect*/
@@ -268,17 +266,16 @@ a {
     width: 100%;
     height: 100%;
     background: linear-gradient(45deg,
-            rgba(0, 0, 0, 0.6),
+            #00000099,
             #cfb43b80);
     clip-path: circle(17% at left 53%);
     z-index: -1;
     animation: circle-moveup 9s ease-in-out infinite;
 }
 
-/* Glass card ---> About us */
+/* Glass card ---> Section: About, Contact */
 .glass-card-wrapper {
     position: relative;
-    width: 100%;
     background: rgba(255, 255, 255, 0.06);
     border: 2px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(0.6rem) saturate(180%);
@@ -286,21 +283,19 @@ a {
     z-index: 1;
 }
 
-/* --- END STYLE TEMPLATES--- */
+/* --- END STYLE TEMPLATES --- */
 
-/* ---Navigation--- */
-
-/*HEADER SECTION*/
-
+/* <--- HEADER SECTION ---> */
 /* Style the header: fixed position (always stay at the top) */
-.header{
-    position:fixed;    
+.header {
+    position: fixed;
     z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
 }
-/* The progress container (grey background) */
+
+/* Progress bar container */
 .progress-container {
     width: 100%;
     height: 8px;
@@ -312,20 +307,19 @@ a {
     background: var(--mainColor);
     width: 0%;
 }
-.nav-bar{
+
+/* ---NAVIGATION--- */
+.nav-bar {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* width: 100%;
-    height: 100%; */
-    /* max-width: 1300px; */
     padding: .2rem 1rem;
 }
 
-.nav-list ul{
-    list-style: none;
+/* background settings after hamburger opening */
+.nav-list ul {
     position: absolute;
-    background-color:var(--bgColor);
+    background-color: var(--bgColor);
     width: 100%;
     height: 100vh;
     top: 0;
@@ -338,38 +332,47 @@ a {
     overflow-x: hidden;
     transition: .6s ease left;
 }
-.nav-list ul.active{
-    left:0;
+
+.nav-list ul.active {
+    left: 0;
 }
-.nav-list ul a{
+
+/* open hamburger - caption settings */
+.nav-list ul a {
     font-size: var(--h4-fsize);
     letter-spacing: .1rem;
     color: var(--white);
-    padding: 1.6rem;
+    padding: 2rem;
     display: block;
     text-transform: uppercase;
     transition: .6s ease color;
 }
-.nav-list ul a::after{
+
+/* open hamburger - effect for caption */
+.nav-list ul a::after {
     content: attr(data-after);
     position: absolute;
-    top:auto;
-    left:50%;
+    top: auto;
+    left: 50%;
     transform: translate(-50%, -50%) scale(0);
-    color:var(--mainColor);
+    color: var(--mainColor);
     font-size: var(--h1-fsize);
     letter-spacing: 2.5rem;
     z-index: -1;
     transition: .6s ease letter-spacing;
 }
-.nav-list ul li:hover a::after{
+
+.nav-list ul li:hover a::after {
     transform: translate(-50%, -60%) scale(1);
     letter-spacing: initial;
 }
-.nav-list ul li:hover a{
-    color: var(--silver);   
+
+.nav-list ul li:hover a {
+    color: var(--silver);
 }
-.hamburger{
+
+/* hamburger icon */
+.hamburger {
     height: 60px;
     width: 60px;
     cursor: pointer;
@@ -378,10 +381,13 @@ a {
     justify-content: center;
     border-radius: 50%;
     border: 3px solid var(--mainColor);
-    transform:scale(.8); /*scale the hamburger icon for pulse animation */
+    transform: scale(.8);
+    /*scale the hamburger icon for pulse animation */
     z-index: 99;
 }
-.hamburger::after{
+
+/* hamburger icon - pulse animation */
+.hamburger::after {
     position: absolute;
     content: "";
     height: 100%;
@@ -390,41 +396,45 @@ a {
     border: 3px solid var(--silver);
     animation: hamburger_puls 1.6s ease infinite;
 }
-.hamburger .bar{
+
+/* hamburger icon - straps */
+.hamburger .bar {
     position: relative;
     height: .125rem;
-    width: 1.6rem; 
+    width: 1.6rem;
     background-color: var(--mainColor);
     z-index: -1;
 }
+
 .hamburger .bar::after,
-.hamburger .bar::before{
+.hamburger .bar::before {
     content: "";
     height: 100%;
     width: 100%;
     position: absolute;
-    /* left: 0; */
-    background-color:rgb(243, 244, 247);
+    background-color: rgb(243, 244, 247);
     transition: .3s ease;
-    /* transition-property: top bottom; */
 }
-.hamburger .bar::after{
-    top:.5rem;
+
+.hamburger .bar::after {
+    top: .5rem;
 }
-.hamburger .bar::before{
+
+.hamburger .bar::before {
     bottom: .5rem;
 }
-.hamburger.active .bar::before{
+
+.hamburger.active .bar::before {
     bottom: 0;
 }
-.hamburger.active .bar::after{
-    top:0;
+
+.hamburger.active .bar::after {
+    top: 0;
 }
 
-/*END HEADER SECTION*/
-/* ---END Navigation--- */
+/* <---END HEADER---> */
 
-/* ---HOME--- */
+/* <---HOME---> */
 /*  background setting */
 .home {
     background: url(./img/bg/bg-main-phone.jpg) no-repeat center/cover fixed;
@@ -446,7 +456,7 @@ a {
 }
 
 /*caption */
-.home__title {
+.home_title {
     position: relative;
     text-transform: uppercase;
     letter-spacing: 0.2rem;
@@ -455,7 +465,7 @@ a {
 
 /* Using animation to create the effect of changing the color of the caption
 on the home page(adding "nbsp" to html to create a space before the beginning of the text)*/
-.home__title::before {
+.home_title::before {
     content: attr(data-text);
     position: absolute;
     color: var(--mainColor);
@@ -466,13 +476,14 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     filter: drop-shadow(0 0 0.2rem var(--mainColor)) drop-shadow(0 0 3rem var(--mainColor));
 }
 
-.home__subtitle {
+.home_subtitle {
     font-size: var(--span-large-fsize);
     text-transform: capitalize;
     margin-bottom: 0.5rem;
     letter-spacing: 0.2rem;
 }
 
+/* Button directing to the contact form */
 .home_action {
     position: relative;
     display: inline-block;
@@ -484,13 +495,13 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     letter-spacing: 0.2rem;
     overflow: hidden;
     text-transform: uppercase;
-    opacity: 1;
 }
 
 .home_btn {
-    font-size: var(--span-normal-fsize);    
+    font-size: var(--span-normal-fsize);
 }
 
+/* Ripple effect */
 .home_action span {
     position: absolute;
     background: var(--silver);
@@ -500,10 +511,9 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     animation: animation-ripple 1.2s linear infinite;
 }
 
-/* ---END HOME--- */
+/* <--- END HOME ---> */
 
-/* ---ABOUT US---> Used Glass card<--- */
-
+/* <---ABOUT US---> */
 .about_wrapper {
     width: 95%;
     gap: 1.7rem;
@@ -513,10 +523,12 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     max-width: 25rem;
 }
 
+/* counter design */
 .about_counter {
     position: relative;
     display: grid;
     width: 85%;
+    max-width: 15rem;
     filter: drop-shadow(0 .3rem 0.2rem rgb(0, 0, 0));
     padding: 1rem;
     transition: 1s;
@@ -524,12 +536,12 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     border: 2px solid var(--mainColor);
     border-bottom: 12px solid var(--mainColor);
     z-index: 1;
-    max-width: 15rem;
+
 }
 
 .about_counter:hover {
     transform: rotateX(35deg);
-    filter: drop-shadow(0 1.4rem 0.6rem rgb(0, 0, 0));
+    filter: drop-shadow(0 1.4rem 0.6rem rgba(0, 0, 0, 0.313));
 }
 
 .about_counter .num {
@@ -546,6 +558,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     padding-bottom: .5rem;
     font-size: var(--basic-fsize);
 }
+
 /* ---END ABOUT US--- */
 
 /* ---SERVICES--- */
@@ -559,16 +572,17 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     gap: 2.7rem;
 }
 
+/* design of the cards */
 .services_content {
-    position: relative;  
+    position: relative;
+    display: flex;
+    flex-direction: column;
     padding: 1rem 1.5rem;
     border: 2px solid var(--mainColor);
     box-shadow: 0px 0px 10px 0px var(--mainColor);
     border-radius: 1rem;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: .6s; 
+    transition: .6s;
 }
 
 .services_content .services_price {
@@ -616,7 +630,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
 .services_content:hover {
     transform: translateY(-1.2rem);
     box-shadow: 0px 6px 12px 0px var(--mainColor);
-    color: var(--white);   
+    color: var(--white);
 }
 
 /* ---END SERVICES--- */
@@ -631,6 +645,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     display: grid;
     justify-items: center;
     width: 100%;
+    row-gap: 10rem;
 }
 
 .team_content {
@@ -638,13 +653,13 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     width: 95%;
     max-width: 15rem;
     height: 25rem;
-    margin: 3.5rem 1.25rem 5.5rem;
 }
 
+/* shadow effect under the hexagon shape */
 .team_content::before {
     content: "";
     position: absolute;
-    bottom: -100px;
+    bottom: -6.25rem;
     left: 0;
     width: 100%;
     height: 60px;
@@ -658,6 +673,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     transform: scale(0.8);
 }
 
+/* setting up the hexagon shape */
 .team_hexagon {
     position: absolute;
     top: 0;
@@ -672,16 +688,16 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     transform: translateY(-30px);
 }
 
-.team_content .team_hexagon img {
+.team_hexagon img {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
 
+/* setting up the info box */
 .team_content .team_hexagon .team_info {
     position: absolute;
     top: 0;
@@ -690,9 +706,9 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    padding: 6rem 1rem 3rem 1rem;
+    padding: 6rem 1rem 4rem 1rem;
     background: linear-gradient(180deg, var(--darker) 0%, #cda908 100%);
     color: var(--white);
     opacity: 0;
@@ -704,13 +720,9 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     color: var(--white);
 }
 
-
 .team_content .social-media {
     position: relative;
-    /* bottom: 3rem; */
-    /* left: 3rem;  */
     display: flex;
-    margin-top: auto;
 }
 
 /* creating the effect of icons appearing on hover
@@ -733,7 +745,6 @@ with a delay created based on the "--i" that was
     z-index: 1;
 }
 
-/* team member icon design */
 .team_content .social-media li a {
     color: var(--white);
     filter: drop-shadow(0 0.4rem 0.3rem rgb(0, 0, 0));
@@ -742,9 +753,11 @@ with a delay created based on the "--i" that was
 }
 
 /*--- END TEAM <---*/
-.testimonial{
-    padding: 0 ;
+
+.testimonial {
+    padding: 0;
 }
+
 .testimonial_wrapper {
     position: relative;
     width: 100%;
@@ -753,7 +766,7 @@ with a delay created based on the "--i" that was
 .testimonial_content {
     position: relative;
     width: 100%;
-    height: 55vh;
+    height: 50vh;
     padding: 0 1.4rem;
 }
 
@@ -772,20 +785,14 @@ with a delay created based on the "--i" that was
     color: var(--mainColor);
     font-size: 2.5rem;
 }
-/* .testimonial_feedback{
-    position: relative;
-    display: flex;
-    align-content: flex-end;
-    width: 100%;
-    margin:auto;
-} */
+
 .testimonial_user {
-    margin-top: auto;
+    margin: auto;
 }
 
 .testimonial_content img {
-    width: 70%;
-    max-width: 15rem;
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     border: 2px solid var(--mainColor);
     object-fit: cover;
@@ -796,15 +803,16 @@ with a delay created based on the "--i" that was
 .prev,
 .next {
     cursor: pointer;
-    position: absolute;  
+    position: absolute;
     top: 60%;
     margin-top: auto;
     font-weight: bold;
     font-size: var(--h3-fsize);
     transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    border: none;
     user-select: none;
     color: var(--silver);
+    background: transparent;
     padding: .6rem;
 }
 
@@ -814,24 +822,19 @@ with a delay created based on the "--i" that was
     border-radius: 3px 0 0 3px;
 }
 
-.prev{
+.prev {
     left: 0;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
     color: var(--mainColor);
 }
 
-.fade {
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
 /*---END TESTIMONIALS---*/
 
 /*---CONTACT---*/
-
+/* setting up background for contact section */
 .contact.circle-bg::before {
     content: '';
     position: absolute;
@@ -839,7 +842,7 @@ with a delay created based on the "--i" that was
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(-45deg,
+    background: linear-gradient(-70deg,
             #00000099,
             #cfb43b80);
     clip-path: circle(17% at right 54%);
@@ -853,8 +856,8 @@ with a delay created based on the "--i" that was
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(45deg,
-            rgba(0, 0, 0, 0.6),
+    background: linear-gradient(70deg,
+            #00000099,
             #cfb43b80);
     clip-path: circle(17% at left 24%);
     z-index: -1;
@@ -869,35 +872,28 @@ with a delay created based on the "--i" that was
     grid-template-columns: 1fr;
     grid-template-rows: auto;
     gap: 1rem;
-    padding: 2rem 0;
     z-index: 1;
 }
 
 /*---form---*/
-.contact_form{
+.contact_form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 95%;
+    max-width: 80rem;
     padding: 1rem;
 }
 
-.glass-card-wrapper {
-    position: relative;
-    width: 100%;
-    background: rgba(255, 255, 255, 0.06);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(0.6rem) saturate(180%);
-    z-index: 1;
-}
-.form_field{
+.form_field {
     display: flex;
     flex-direction: column;
-    margin:.3rem 0;
-    width: 100%;
+    margin: .3rem 0;
+    width: 90%;
 }
 
-.field-name{
+.field-name {
     font-size: var(--span-normal-fsize);
     margin-top: .6rem;
     margin-bottom: .3rem;
@@ -905,18 +901,17 @@ with a delay created based on the "--i" that was
     text-transform: capitalize;
 }
 
-.field_input{
-    padding: .6rem;
+.field_input {
+    padding: .3rem;
     font-size: var(--span-normal-fsize);
     color: var(--silver);
     outline: none;
     border-style: none;
     border-bottom: 1px solid var(--silver);
-    text-transform: capitalize;
     background: transparent;
 }
 
-.field_textarea{
+.field_textarea {
     padding: .6rem;
     font-size: var(--span-normal-fsize);
     color: var(--silver);
@@ -930,7 +925,7 @@ with a delay created based on the "--i" that was
     margin: .6rem 0;
 }
 
-.field_submit{
+.field_submit {
     background: transparent;
     color: var(--mainColor);
     border: 1px solid var(--silver);
@@ -938,67 +933,70 @@ with a delay created based on the "--i" that was
     border-radius: .6rem;
     font-size: var(--span-normal-fsize);
     text-transform: uppercase;
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-.form_field ::placeholder{
+.form_field ::placeholder {
     color: rgba(192, 192, 192, 0.4);
 }
+
 /*---details---*/
-.contact_details{
+.contact_details {
     position: relative;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
     padding: 1rem;
 }
 
-.contact_info{
+.contact_info {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: .6rem;
 }
 
-.contact_info i{
+.contact_info i {
     color: var(--mainColor);
     font-size: var(--span-normal-fsize);
 }
 
 .contact_option {
     color: var(--silver);
-    font-size: var(--span-normal-fsize);    
+    font-size: var(--span-normal-fsize);
     margin: .6rem auto;
 }
 
 .contact_map {
     padding: 0;
-    margin-bottom: 15rem;
-    width: 100%;
+    margin-bottom: 5rem;
+    width: 95%;
+    max-width: 80rem;
     height: 45vh;
 }
 
-.contact_map iframe{
+.contact_map iframe {
     width: 100%;
     height: 100%;
 }
+
 /*---END CONTACT---*/
 
 /*-----FOOTER----- */
-.footer{
+.footer {
     position: relative;
     background: rgba(255, 255, 255, 0.06);
     height: auto;
     width: 100%;
 }
 
-.footer_top{
+.footer_top {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    margin:auto;
+    margin: auto;
     padding: 1rem .5rem;
 }
 
@@ -1009,78 +1007,90 @@ with a delay created based on the "--i" that was
     margin: auto;
 }
 
-.footer_brand{
+.footer_brand {
     margin: auto auto;
     font-size: var(--basic-fsize);
 }
 
-.footer_logo{
+.footer_logo {
     width: 40px;
     height: 40px;
     margin-left: 1rem;
 }
 
-.footer_social-media{
+.footer_social-media {
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     margin-top: .5rem;
 }
-.footer_social-media li{
+
+.footer_social-media li {
     margin: .8rem;
 }
 
-.footer_social-media a i{
+.footer_social-media a i {
     color: var(--silver);
     font-size: 1.6rem;
     transition: 1.2s;
 }
 
-.footer_social-media a:hover i{
+.footer_social-media a:hover i {
     transform: rotateY(360deg);
     color: var(--mainColor);
 }
 
-.footer_bottom{
-    width: 100%;  
+.footer_bottom {
+    width: 100%;
 }
-.copyrights{
+
+.copyrights {
     font-size: .8rem;
     margin: 0;
     padding-bottom: 1rem;
     text-transform: capitalize;
 }
 
+/* <----- END FOOTER-----> */
 
-/*----- END FOOTER----- */
+/* <--- ANIMATION ---> */
+
+/* Animation for circles located in the background
+involving changing their position */
 @keyframes circle-moveup {
     0% {
         top: 0;
         right: 0;
     }
+
     50% {
         top: -2%;
         right: 2%;
-        
+
     }
+
     100% {
         top: 0;
         right: 0;
     }
 }
 
-@keyframes hamburger_puls{
-    0%{
+/* Pulse animation for hamburger */
+@keyframes hamburger_puls {
+    0% {
         opacity: 1;
         transform: scale(1);
     }
-    100%{
+
+    100% {
         opacity: 0;
         transform: scale(1.5);
     }
 }
 
+/* Animation for the crosses
+located at the background of the section "Team" */
 @keyframes bg_animation--crosses {
     0% {
         transform: scale(0) translateY(0) rotate(0);
@@ -1093,7 +1103,6 @@ with a delay created based on the "--i" that was
     }
 }
 
-/* ---ANIMATION--- */
 /* Animation applied to home h1 as an effect for the main caption */
 @keyframes txtGlowAnimate {
 
@@ -1124,57 +1133,51 @@ with a delay created based on the "--i" that was
     }
 }
 
+/* transition animation */
 @keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
-/* END ANIMATION */
+/* <--- END ANIMATION ---> */
 
 /* ---MEDIA--- */
 
-@media only screen and (min-width: 425px) {
-    /* .section-intro {
-        margin: 3rem 1.5rem;
-    } */
-
-    /* .about_wrapper {
-        width: 80%;
-    }
-
-    .about_counter {
-        width: 60%;
-    } */
-
-    /* .services_content {
-        width: 75%;
-    } */
-
-    /* .team_content {
-        width: 60%;
-    } */
-    .testimonial_wrapper{
-        grid-template-columns: repeat(6, 420px);
-    }   
-}
-
 @media only screen and (min-width: 600px) {
     .circle-bg::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         clip-path: circle(20% at right 82%);
         animation: circle-moveup 8s ease-in-out infinite;
     }
-    
+
     .circle-bg::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
         clip-path: circle(20% at left 58%);
         animation: circle-moveup 8s ease-in-out infinite;
     }
 
     .section-intro {
         width: 80%;
-    } 
+    }
+
     /* ABOUT SECTION */
     .about_wrapper {
-        width:95%;
+        width: 95%;
         max-width: 40rem;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
@@ -1197,58 +1200,94 @@ with a delay created based on the "--i" that was
 
     /* TEAM SECTION */
     .team_wrapper {
+        width: 95%;
         max-width: 40rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .team_content {
         max-width: 20rem;
     }
+
+    /* ---TESTIMONIALS--- */
+    .testimonial_wrapper {
+        width: 95%;
+    }
+
+    .testimonial_content {
+        height: 40vh;
+    }
+
+    /* ---CONTACT--- */
+    .contact_wrapper {
+        max-width: 40rem;
+    }
 }
 
-
 @media only screen and (min-width: 1020px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+
     .circle-bg::before {
-        clip-path: circle(22% at right 64%);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        clip-path: circle(20% at right 62%);
         animation: circle-moveup 5s ease-in-out infinite;
     }
-    
+
     .circle-bg::after {
-        clip-path: circle(22% at left 42%);
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        clip-path: circle(20% at left 44%);
         animation: circle-moveup 5s ease-in-out infinite;
     }
 
     .section-intro {
         width: 50%;
-    } 
+    }
 
     /* ---HEADER--- */
-    .header .hamburger{
+    .header .hamburger {
         display: none;
     }
-    .header .nav-list ul{
+
+    .header .nav-list ul {
         position: inherit;
         display: block;
         height: auto;
         width: fit-content;
-        background-color:transparent;
+        background-color: transparent;
     }
-    .header .nav-list ul li{
+
+    .header .nav-list ul li {
         display: inline-block;
     }
-    .header .nav-list ul li a{
-        font-size:var(--basic-fsize) ;
+
+    .header .nav-list ul li a {
+        font-size: var(--basic-fsize);
     }
-    .header .nav-list ul a::after{
+
+    .header .nav-list ul a::after {
         display: none;
     }
-    .nav-list ul a{
+
+    .nav-list ul a {
         color: var(--silver);
         padding: .3rem 1.2rem;
         transition: transform .6s ease;
     }
-    .nav-list ul li:hover a{
+
+    .nav-list ul li:hover a {
         color: var(--mainColor);
         transform: translateY(-.3rem);
     }
@@ -1261,50 +1300,57 @@ with a delay created based on the "--i" that was
     /* ---ABOUT--- */
     .about_wrapper {
         grid-template-columns: repeat(4, 1fr);
-        max-width: 80rem;
+        max-width: 70rem;
     }
 
     /* ---SERVICES--- */
     .services_wrapper {
-        grid-template-columns: repeat(4, 1fr);
-        max-width: 80rem;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 45rem;
+        gap: 2.5rem;
     }
 
     /* ---TEAM--- */
     .team_wrapper {
         grid-template-columns: repeat(4, 1fr);
-        max-width: 80rem;
+        max-width: 70rem;
+        column-gap: .5rem;
     }
 
     /* ---TESTIMONIALS--- */
     .testimonial_wrapper {
-        max-width: 86rem;
+        width: 90%;
+        padding: auto;
+        ;
     }
-    .testimonial_content{
-        padding: 0 3rem;
+
+    .testimonial_content {
+        margin: auto;
+        height: 40vh;
     }
+
+    .testimonial_content img {
+        width: 14rem;
+        height: 14rem;
+    }
+
     /* ---CONTACT--- */
     .contact_wrapper {
         position: relative;
         display: grid;
         grid-template-columns: 2fr 1fr;
-        grid-template-rows: 5fr 4fr;
-        grid-template-areas:
-        "form details"
-        "form map";
-        gap:20px;
-        margin-top: 20px;
-        width: 100%;
-        padding: 40px;
+        max-width: 70rem;
         margin: auto;
     }
-    .row50{
-        display: flex;
-        gap: 20px;
+
+    .field_input {
+        padding: .8rem;
     }
 
-    .input_box{
-        width: 50%;
+    .contact_details {
+        height: fit-content;
+        width: 100%;
     }
 }
+
 /* ---MEDIA--- */
