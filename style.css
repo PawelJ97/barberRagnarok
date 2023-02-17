@@ -9,7 +9,7 @@
     --silver: #c0c0c0;
     --white: #fff;
     --darker: rgba(0, 0, 0, 0.55);
-    --bgColor: rgb(13, 13, 13);
+    --bgColor: rgb(15, 15, 15);
     --btn-bgcolor: rgba(255, 255, 255, 0.06);
 
     /*========== Font ==========*/
@@ -218,7 +218,7 @@ a {
 }
 
 .bg-animation_item:nth-child(12) {
-    top: 89%;
+    top: 90%;
     left: 35%;
     animation: bg_animation--crosses 5s linear infinite;
 }
@@ -276,7 +276,7 @@ a {
 /* Glass card ---> Section: About, Contact */
 .glass-card-wrapper {
     position: relative;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(255, 255, 255, 0.04);
     border: 2px solid rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(0.6rem) saturate(180%);
     border-radius: .6rem;
@@ -437,7 +437,7 @@ a {
 /* <---HOME---> */
 /*  background setting */
 .home {
-    background: url(./img/bg/bg-main-phone.jpg) no-repeat center/cover fixed;
+    background: url(./img/bg/bg-main-phone.jpg) no-repeat center/cover;
     position: relative;
     z-index: 1;
 }
@@ -594,7 +594,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
 .services_content:nth-child(1):hover {
     background: linear-gradient(45deg,
             rgba(0, 0, 0, 0.6) 0%,
-            rgba(16, 16, 16, 0.8) 100%),
+            rgba(16, 16, 16, 0.5) 100%),
         url(./img/bg/bg-service-hover-haircut.jpg);
     background-size: cover;
     background-position: top center;
@@ -603,7 +603,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
 .services_content:nth-child(2):hover {
     background: linear-gradient(45deg,
             rgba(0, 0, 0, 0.6) 0%,
-            rgba(16, 16, 16, 0.8) 100%),
+            rgba(16, 16, 16, 0.5) 100%),
         url(./img/bg/bg-service-hover-razor.jpg);
     background-size: cover;
     background-position: top center;
@@ -612,7 +612,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
 .services_content:nth-child(3):hover {
     background: linear-gradient(45deg,
             rgba(0, 0, 0, 0.6) 0%,
-            rgba(16, 16, 16, 0.6) 100%),
+            rgba(16, 16, 16, 0.4) 100%),
         url(./img/bg/bg-service-hover-beard.jpg);
     background-size: cover;
     background-position: top center;
@@ -621,7 +621,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
 .services_content:nth-child(4):hover {
     background: linear-gradient(45deg,
             rgba(0, 0, 0, 0.6) 0%,
-            rgba(16, 16, 16, 0.6) 100%),
+            rgba(16, 16, 16, 0.4) 100%),
         url(./img/bg/bg-service-hover-combo.jpg);
     background-size: cover;
     background-position: top center;
@@ -911,6 +911,21 @@ with a delay created based on the "--i" that was
     background: transparent;
 }
 
+.field_input:focus {
+    border-bottom: 1px solid var(--mainColor);
+    
+}
+
+/*---form auto fill transparent---*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--silver) !important;
+    transition: background-color 8000s ease-in-out 0s;
+    
+} 
+
 .field_textarea {
     padding: .6rem;
     font-size: var(--span-normal-fsize);
@@ -925,6 +940,9 @@ with a delay created based on the "--i" that was
     margin: .6rem 0;
 }
 
+.field_textarea:focus{
+    border: 1px solid var(--mainColor);}
+
 .field_submit {
     background: transparent;
     color: var(--mainColor);
@@ -934,6 +952,10 @@ with a delay created based on the "--i" that was
     font-size: var(--span-normal-fsize);
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.field_submit:hover {
+    border: 1px solid var(--mainColor);
 }
 
 .form_field ::placeholder {
@@ -985,7 +1007,7 @@ with a delay created based on the "--i" that was
 /*-----FOOTER----- */
 .footer {
     position: relative;
-    background: rgba(255, 255, 255, 0.06);
+    background: rgba(43, 43, 43, 0.2);
     height: auto;
     width: 100%;
 }
@@ -1156,7 +1178,7 @@ located at the background of the section "Team" */
         left: 0;
         width: 100%;
         height: 100%;
-        clip-path: circle(20% at right 82%);
+        clip-path: circle(20% at right 80%);
         animation: circle-moveup 8s ease-in-out infinite;
     }
 
