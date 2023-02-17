@@ -663,7 +663,7 @@ on the home page(adding "nbsp" to html to create a space before the beginning of
     left: 0;
     width: 100%;
     height: 60px;
-    background: radial-gradient(rgba(0, 0, 0, 0.9), transparent, transparent);
+    background: radial-gradient(rgba(0, 0, 0, 0.503), transparent, transparent);
     border-radius: 50%;
     transition: .5s;
 }
@@ -923,7 +923,7 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-text-fill-color: var(--silver) !important;
     transition: background-color 8000s ease-in-out 0s;
-    
+    transition-delay: 3600s;
 } 
 
 .field_textarea {
@@ -1248,6 +1248,9 @@ located at the background of the section "Team" */
 }
 
 @media only screen and (min-width: 1020px) {
+    :root {
+        --bgColor: rgb(12, 12, 12);
+    }
     .container {
         padding: 1.5rem 1rem;
     }
