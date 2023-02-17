@@ -922,8 +922,8 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     -webkit-text-fill-color: var(--silver) !important;
-    transition: background-color 8000s ease-in-out 0s;
-    transition-delay: 3600s;
+    transition: background-color 5000s ease-in-out 0s;
+    transition-delay: 2592000s;
 } 
 
 .field_textarea {
